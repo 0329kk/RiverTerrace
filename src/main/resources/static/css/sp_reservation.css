@@ -1,0 +1,293 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@media screen and (max-width : 767px ){
+  
+  .web_top_nav{
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto 30px;
+    display: flex;
+    clear: both;
+    padding: 2%;
+  }
+  
+  .web_top_nav li{
+    border-color: #c4c4c4;
+    background: #fff;
+    width: 50%;
+    float: left;
+    display: flex;
+    flex: 0 0 49%;
+    max-width: 49%;
+    padding: 0;
+    border: 1px solid;
+    border-radius: 4px;
+  }
+  
+  .web_top_nav li:nth-child(2n+1){
+    clear: both;
+  }
+  
+  .web_top_nav li:nth-child(-n+2){
+    margin-bottom: 2%;
+  }
+  
+  .web_top_nav li a{
+    display: flex;
+    flex-basis: 100%;
+    flex-flow: row;
+    max-width: 100%;
+    padding: 8px 8px 8px 10px;
+    position: relative;
+    width: 100%;
+    line-height: 1.3;
+    text-align: left;
+    font-size: 0.9em;
+    align-items: center;
+  }
+  
+  .web_top_nav li a img{
+    width: 20px;
+    height: 20px;
+    padding-right: 3px;
+  }
+  
+  .breadcrumb{
+    list-style-type: none;
+    display: table;
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid#BAC8FF;
+  }
+
+  .breadcrumb li{
+    display: table-cell;
+    position: relative;
+    background: #97b3ff;
+    padding: 0.5em 1em 0.5em 1em;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .breadcrumb li:last-child{
+    padding-right: 1em;
+    overflow: initial;
+  }
+
+  .breadcrumb li:nth-child(-n+3):before,
+  .breadcrumb li:nth-child(-n+3):after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: auto;
+  }
+  
+  .breadcrumb li:nth-child(-n+3):before{
+    top: -13px;
+    right: -1em;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+    border-width: 40px 0 40px 1em;
+    z-index: 10;
+  }
+  
+  .breadcrumb li:nth-child(-n+3):after{
+    top: -13px;
+    right:-0.8em;
+    border-style: solid;
+    border-color: transparent transparent transparent #97b3ff;
+    border-width: 40px 0 40px 1em;
+    z-index: 10;
+  }
+  
+  .breadcrumb li.breadcrumb_active{
+    background: #445d9e;
+    font-weight: bold;
+  }
+  
+  .breadcrumb li.breadcrumb_active:after{
+    border-color: transparent transparent transparent #445d9e;
+  }
+
+  .breadcrumb li:first-child a{
+    color: #fff;
+  }
+
+  .breadcrumb li:nth-child(n+2) a{
+    color: #000;
+  }
+  
+  .breadcrumb li a span{
+    display: block;
+    text-align: center;
+  }
+  
+  .web_page_nav{
+    margin-top: 30px;
+  }
+  
+  .web_page_navWrapper{
+    width: 70%;
+  }
+  
+  .web_search dt{
+    border-bottom: 1px dashed #c4c4c4;
+    padding: 30px 0;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .web_search dd{
+    padding: 30px;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .web_table_person{
+    display: none;
+  }
+  
+  .web_input_date{
+    justify-content: center;
+    display: flex;
+    flex-flow: column;
+  }
+  
+  .web_input_date::after{
+    content: "";
+    border-bottom: 1px solid #c4c4c4;
+    width: 100%;
+    padding-top: 30px;
+    margin: 0;
+  }
+  
+  .web_input_date input{
+    height: 30px;
+  }
+  
+  .web_input_box_wrapper{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
+  
+  .web_input_inner{
+    padding-right: 30px;
+  }
+  
+  .web_input_inner p{
+    text-align: left;
+  }
+  
+  .web_com_box{
+    margin-top: 15px;
+  }
+  
+  .web_price_range{
+    display: flex;
+  }
+  
+  .web_btn{
+    margin-top: 30px;
+  }
+
+  .web_btnBox{
+    font-weight: bold;
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 220px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 15px;
+    background: linear-gradient(to bottom,#edb83d 0,#bb8d23 50%,#a07003 51%,#bb8d23 100%);
+    color: #fff;
+    border-color: #bb8d23;
+    box-shadow: 0 0 5px 5px;
+  }
+
+  .web_btnBox span{
+    display: block;
+  }
+  
+  .tab-pane{
+    flex-flow: column;
+  }
+  
+  .web_note{
+    margin-bottom: 30px;
+  }
+  
+  .web_room_single dd{
+    display: flex;
+    flex-flow: column;
+  }
+  
+  .web_photo{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  
+  .web_photo li{
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .web_photo li a img{
+    width: 100%;
+  }
+  
+  .roomlist_price{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+  }
+  
+  .roomlist_priceWrapper{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    align-items: center;
+    margin-left: auto;
+  }
+  
+  .footer_logo img{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .footer_navWrapper{
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+  }
+  
+  .footer_navWrapper li:nth-child(n+2){
+    padding-top: 25px;
+  }
+  
+  .footer_media{
+    border-bottom: 2px solid #fff;
+    padding-bottom: 60px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .footer_media img{
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+}

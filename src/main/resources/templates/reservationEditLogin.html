@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>RIVER TERRACE</title>
+<link th:href="@{/css/top.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/style_sp.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/rervation.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/sp_reservation.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	 <main>
+	 	<div class="contact">
+	          <div class="form">
+	            <form th:action="@{/reservationEditLogin}" th:method="post" th:object="${formModel}">
+	              <table>
+	                <tbody>
+	                  <tr:block th:if="${not #lists.isEmpty(errorMessages)}">
+	                  	<th></th>
+	                  	<td class="error-message" style="color: red;" th:each="errorMessage : ${errorMessages}" th:text="${errorMessage}"></td>
+	                  </tr:block>	
+	                  <tr>
+	                    <th>予約ID<span class="required">必須</span></th>
+	                    <td><input type="text" name="reservationId" th:value="${formModel.reservationid}" th:field="*{reservationid}"></td>
+	                  </tr>
+	                  <tr>
+	                    <th>お名前<span class="required">必須</span></th>
+	                    <td><input type="text" name="name" th:value="${formModel.name}" th:field="*{name}"></td>
+	                  </tr>
+	                  <tr>
+	                    <th>メールアドレス<span class="required">必須</span></th>
+	                    <td><input type="text" name=" email" th:value="${formModel.email}" th:field="*{email}"></td>
+	                  </tr>  	                               
+	                  <tr>
+	                    <th></th>
+	                    <td>
+	                    	<input type="submit" id="submit">
+	                    </td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	            </form>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="returnBtn">
+            <a th:href="@{/top}">トップページに戻る</a>
+         </div>
+	 </main>
+      <footer>
+		  <section>
+		    <div class="footer">
+		      <div class="footer_wrapper">
+		        <div class="footer_wrapperInner">
+		          <div class="footer_logo"><a href="index.html"><img src="image/logo.png" alt="RIVER TERRACE"></a></div>
+		          <div class="footer_nav">
+		            <ul class="footer_navWrapper">
+		              <li>ROOM</li>
+		              <li>FOOD</li>
+		              <li>ACTIVITY</li>
+		              <li>ACCESS</li>
+		              <li>INFORMATION</li>
+		              <li>CONTACT</li>
+		              <li>RESERVATION</li>
+		            </ul>
+		          </div>
+		           <div class="footer_media">
+		             <ul class="footer_mediaWrapper">
+		               <li><a href=""><img src="image/twitter.png" alt="Twitter"></a></li>
+		               <li><a href=""><img src="image/instagram.png" alt=" Instagram"></a></li>
+		               <li><a href=""><img src="image/facebook.png" alt="Facebook"></a></li>
+		               <li><a href=""><img src="image/youtube.png" alt="YouTube"></a></li>
+		             </ul>
+		           </div>
+		         </div>
+		        <div class="copy_right">
+		          <p>©︎RIVER TERRACE.2018</p>
+		        </div>
+		      </div>
+		    </div>
+		  </section>
+		  <div id="page_top"><a href="reservation.html"></a></div>
+		</footer>
+</body>
+</html>

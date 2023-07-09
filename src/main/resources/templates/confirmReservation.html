@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>RIVER TERRACE</title>
+<link th:href="@{/css/top.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/style_sp.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/swiper.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/slick.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/slick-theme.css}" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+  <main>
+  	<div class="contact_confirm">
+      	<div class="form_confirm">
+      		<div class="completion">
+			    <h2>お問い合わせ 予約完了</h2>
+				    <p>
+				    お問い合わせありがとうございました。<br>
+				    内容を確認のうえ、回答させて頂きます。<br>
+				    しばらくお待ちください。
+				    </p>
+				    <div class="returnBtn">
+            			<a th:href="@{/top}">トップページに戻る</a>
+        			</div>
+		    </div>
+      	</div>
+  	</div>
+  </main>
+  <footer>
+     <div class="copy_right">
+         <p>©︎RIVER TERRACE.2018</p>
+     </div>
+  </footer>
+    <script>
+    $(document).ready(function() {
+      $("#nav-toggle").click(function () {
+        $('body').toggleClass("open");
+        $('body').next().toggleClass("onanimation");
+        $('ul li').hide();
+        $('ul li').each(function(i) {
+          $(this).delay(80 * i).fadeIn(500);
+        });
+      });
+    });
+  </script>
+  <script>
+    jQuery(function() {
+      $(window).scroll(function () {
+        if($(window).scrollTop() > 20) {
+		    $('.header_inner,.logo_text,.header_nav_list li a,#nav-toggle span').addClass('fixed');
+		  } else {
+		    $('.header_inner,.logo_text,.header_nav_list li a,#nav-toggle span').removeClass('fixed');
+		  }
+		});
+    });
+  </script>
+</body>
+</html>

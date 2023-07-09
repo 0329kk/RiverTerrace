@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>RIVER TERRACE</title>
+<link th:href="@{/css/rervation.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/sp_reservation.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/default.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/default.date.css}" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+<script th:src="@{js/picker.js}"></script>
+<script th:src="@{js/picker.date.js}"></script>
+<script th:src="@{js/legacy.js}"></script>
+<script th:src="@{js/lang-ja.js}"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="reserv_logo">
+    <a th:href="@{/top}"><img src="image/logo.png" alt="RIVER TERRACE"></a>
+  </div>
+</header>
+<main>
+  <div class="web_reserv">
+    <ul class="web_top_nav">
+      <!--li class="link_trip">
+        <a href="">
+          <img src="https://img.icons8.com/ios/100/000000/calendar--v1.png">
+          <span>予約</span>
+        </a>
+      </li-->
+      <li class="link_booked_login">
+        <a th:href="@{/reservationEditLogin}">
+          <img src="https://img.icons8.com/small/16/000000/reservation-2.png"/>
+          <span>予約確認・変更・キャンセル</span>
+        </a>
+      </li>
+      <!-- li class="link_member_create">
+        <a href="">
+          <img src="https://img.icons8.com/material-rounded/24/000000/edit-user-male.png"/>
+          <span>会員登録</span>
+        </a>
+      </li>
+      <li class="link_member_login">
+        <a href="">
+          <img src="https://img.icons8.com/android/24/000000/login-rounded-right.png"/>
+          <span>ログイン・パスワード再発行</span>
+        </a>
+      </li-->
+    </ul>
+    <ol class="breadcrumb">
+      <li class="breadcrumb_active">
+        <a><span>❶</span>プラン選択</a>
+      </li>
+      <li class="breadcrumb_detail">
+        <a><span>❷</span>予約内容入力</a>
+      </li>
+      <!--li class="breadcrumb_personal">
+        <a><span>❸</span>個人情報入力</a>
+      </li>
+      <li class="breadcrumb_confilm">
+		 <a><span>❸</span>予約内容確認</a>
+	　</li-->
+      <li class="breadcrumb_thanks">
+        <a><span></span>予約完了</a>
+      </li>
+    </ol>
+  </div>
+  <!--div class="web_page_nav">
+    <p class="web_sub_title"><span></span>ご希望の宿泊プランをお選びください。</p>
+    <ul class="web_page_navWrapper">
+      <li class="mune_plan_active"><a href="">プラン一覧</a></li>
+      <li class="menu_plan_room"><a href="">お部屋一覧</a></li>
+      <li class="menu_plan_daily"><a href="">空室カレンダー</a></li>
+    </ul>
+  </div>
+  <div>
+    <form action="" method="get">
+      <dl class="web_search">
+        <dt>ご希望の条件で検索してください。</dt>
+        <dd>
+          <div class="web_input">
+            <div class="web_input_box">
+              <div class="web_input_date web_input_inner">
+                <p>宿泊日</p>
+                <input id="date" class="fieldset__input js__datepicker" type="text" placeholder="日付を選択してください">
+              </div>
+              <div class="web_input_box_wrapper">
+                <div class="web_input_inner">
+                  <p>泊数</p>
+                  <div class="web_input_item">
+                    <span class="web_select_wrap">
+                      <select name="numberOfNights" id="numberOfNights">
+                        <option value="1" selected="selected"></option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                      </select>
+                    </span>
+                    <span>泊</span>
+                  </div>
+                </div>
+                <div class="web_input_inner">
+                  <p>部屋数</p>
+                  <div class="web_input_item">
+                    <span class="webc_select_wrap">
+                      <select name="roomCount" id="roomCount">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </span>
+                    <span>室</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="web_input_box web_person_box web_input_box_wrapper">
+              <div class="web_input_inner">
+                <p>男性</p>
+                <div class="web_input_item">
+                  <span class="web_select_wrap">
+                    <select name="guests_men" id="guests_men">
+                      <option value="0" selected="selected">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </span>
+                  <span>名</span>
+                </div>
+              </div>
+              <div class="web_input_inner">
+                <p>女性</p>
+                <div class="web_input_item">
+                  <span class="web_select_wrap">
+                    <select name="guests_woman" id="guests_woman">
+                      <option value="0" selected="selected">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </span>
+                  <span>名</span>
+                </div>
+              </div>
+              <div class="web_input_inner">
+                <p>子供</p>
+                <div class="web_input_item">
+                  <select name=" childCount" id=" childCount">
+                      <option value="0" selected="selected">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  <span>名</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="web_com_box web_input">
+            <div class="web_com_boxWrapper">
+              <p>※大人一名様あたりの料金</p>
+              <div class="web_price_range">
+                <span class="web_select_wrap">
+                  <select name="priceMin" id="priceMin">
+                    <option value="0" selected="selected">下限なし</option>
+                    <option value="1,000">1000</option>
+                    <option value="2,000">2000</option>
+                    <option value="3,000">3000</option>
+                    <option value="4,000">4000</option>
+                    <option value="5,000">5000</option>
+                    <option value="6,000">6000</option>
+                    <option value="7,000">7000</option>
+                    <option value="8,000">8000</option>
+                    <option value="9,000">9000</option>
+                    <option value="10,000">10000</option>
+                    <option value="11,000">11000</option>
+                    <option value="12,000">12000</option>
+                    <option value="13,000">13000</option>
+                    <option value="14,000">14000</option>
+                    <option value="15,000">15000</option>
+                    <option value="16,000">16000</option>
+                    <option value="17,000">17000</option>
+                    <option value="18,000">18000</option>
+                    <option value="19,000">19000</option>
+                    <option value="20,000">20000</option>
+                    <option value="21,000">21000</option>
+                    <option value="22,000">22000</option>
+                    <option value="23,000">23000</option>
+                    <option value="24,000">24000</option>
+                    <option value="25,000">25000</option>
+                    <option value="26,000">26000</option>
+                    <option value="27,000">27000</option>
+                    <option value="28,000">28000</option>
+                    <option value="29,000">29000</option>
+                    <option value="30,000">30000</option>
+                    <option value="31,000">31000</option>
+                    <option value="32,000">32000</option>
+                    <option value="33,000">33000</option>
+                    <option value="34,000">34000</option>
+                    <option value="35,000">35000</option>
+                    <option value="36,000">36000</option>
+                    <option value="37,000">37000</option>
+                    <option value="38,000">38000</option>
+                    <option value="39,000">39000</option>
+                    <option value="40,000">40000</option>
+                    <option value="41,000">41000</option>
+                    <option value="42,000">42000</option>
+                    <option value="43,000">43000</option>
+                    <option value="44,000">44000</option>
+                    <option value="45,000">45000</option>
+                    <option value="46,000">46000</option>
+                    <option value="47,000">47000</option>
+                    <option value="48,000">48000</option>
+                    <option value="49,000">49000</option>
+                    <option value="50,000">50000</option>
+                  </select>
+                </span>
+                <span>〜</span>
+                <span class="web_select_wrap">
+                  <select name="priceMax" id="priceMax">
+                    <option value="0" selected="selected">上限なし</option>
+                    <option value="1,000">1000</option>
+                    <option value="2,000">2000</option>
+                    <option value="3,000">3000</option>
+                    <option value="4,000">4000</option>
+                    <option value="5,000">5000</option>
+                    <option value="6,000">6000</option>
+                    <option value="7,000">7000</option>
+                    <option value="8,000">8000</option>
+                    <option value="9,000">9000</option>
+                    <option value="10,000">10000</option>
+                    <option value="11,000">11000</option>
+                    <option value="12,000">12000</option>
+                    <option value="13,000">13000</option>
+                    <option value="14,000">14000</option>
+                    <option value="15,000">15000</option>
+                    <option value="16,000">16000</option>
+                    <option value="17,000">17000</option>
+                    <option value="18,000">18000</option>
+                    <option value="19,000">19000</option>
+                    <option value="20,000">20000</option>
+                    <option value="21,000">21000</option>
+                    <option value="22,000">22000</option>
+                    <option value="23,000">23000</option>
+                    <option value="24,000">24000</option>
+                    <option value="25,000">25000</option>
+                    <option value="26,000">26000</option>
+                    <option value="27,000">27000</option>
+                    <option value="28,000">28000</option>
+                    <option value="29,000">29000</option>
+                    <option value="30,000">30000</option>
+                    <option value="31,000">31000</option>
+                    <option value="32,000">32000</option>
+                    <option value="33,000">33000</option>
+                    <option value="34,000">34000</option>
+                    <option value="35,000">35000</option>
+                    <option value="36,000">36000</option>
+                    <option value="37,000">37000</option>
+                    <option value="38,000">38000</option>
+                    <option value="39,000">39000</option>
+                    <option value="40,000">40000</option>
+                    <option value="41,000">41000</option>
+                    <option value="42,000">42000</option>
+                    <option value="43,000">43000</option>
+                    <option value="44,000">44000</option>
+                    <option value="45,000">45000</option>
+                    <option value="46,000">46000</option>
+                    <option value="47,000">47000</option>
+                    <option value="48,000">48000</option>
+                    <option value="49,000">49000</option>
+                    <option value="50,000">50000</option>
+                  </select>
+                </span>
+              </div>
+            </div>
+            <div class="web_btn">
+            <button type="submit" class="web_btnBox">
+              <span>検索</span>
+            </button>
+            </div>
+          </div>
+        </dd>
+      </dl>
+    </form>
+  </div>
+  <div class="tab-paneContents active">
+    <div class="tab-pane">
+      <div class="web_note">
+        12件中1～3件を表示
+      </div>
+      <div class="web_sortList">
+        <ul>
+          <li><button type="button" id="sortDefault">おすすめ順</button></li>
+          <li><a href=""><button type="button" id="sortHighestPrice">料金が高い順</button></a></li>
+          <li><a href=""><button type="button" id="sortLowestPrice">料金が安い順</button></a></li>
+        </ul>
+      </div>
+    </div-->
+    <div class="roomlist">
+      <div class="roomlist_wrapper">
+        <p class="roomlist_head">このプランで選択できるお部屋</p>
+        <div class="roomlist_body">
+          <dl th:each="plan : ${planList}" class="web_room_single planRoom">
+            <dt>
+              <span th:text="${plan.planname}">シングルドーム</span>
+              <span><img src="https://img.icons8.com/office/30/000000/no-smoking.png"/></span>
+            </dt>
+            <dd>
+              <ul class="web_photo room_images">
+                <li><a href=""><img src="image/plan_photo5.png" alt=""></a></li>
+                <li><a href=""><img src="image/plan_photo6.png" alt=""></a></li>
+              </ul>
+              <div class="roomlist_price">
+                <span class="roomlist_priceWrapper">
+                  <span th:text="${plan.numpepole}"></span>
+                  <strong><span th:text="${plan.price + '円'}"></span></strong>
+                  <span>※部屋の写真は一例です。</span>
+                </span>
+	               <a th:href="@{/reservationInfo/{id}(id=${plan.id})}" class="roomlist_btn">
+	                <!--input type="hidden" name="id" th:value="${plan.id}"-->
+	                <button type="button">詳細/ご予約<span>&#187;</span></button>
+	               </a>
+              </div>
+            </dd>
+          </dl>
+          <!--dl class="web_room_single planRoom">
+            <dt>
+              <span>ツインドーム</span>
+              <span><img src="https://img.icons8.com/office/30/000000/no-smoking.png"/></span>
+            </dt>
+            <dd>
+              <ul class="web_photo room_images">
+                <li><a href=""><img src="image/plan_photo3.png" alt="ツインドーム"></a></li>
+                <li><a href=""><img src="image/plan_photo4.png" alt="ツインドーム"></a></li>
+              </ul>
+              <div class="roomlist_price">
+                <span class="roomlist_priceWrapper">
+                  <span>定員2名〜4名様</span>
+                  <strong><span>5,8000円〜</span></strong>
+                  <span>※部屋の写真は一例です。</span>
+                </span>
+                <a href="" class="roomlist_btn">
+                  <button type="button">詳細/ご予約<span>&#187;</span></button>
+                </a>
+              </div>
+            </dd>
+          </dl>
+          <dl class="web_room_single planRoom">
+            <dt>
+              <span>トリプルドーム</span>
+              <span><img src="https://img.icons8.com/office/30/000000/no-smoking.png"/></span>
+            </dt>
+            <dd>
+              <ul class="web_photo room_images">
+                <li><a href=""><img src="image/plan_photo1.png" alt="トリプルドーム"></a></li>
+                <li><a href=""><img src="image/plan_photo2.png" alt="トリプルドーム"></a></li>
+              </ul>
+              <div class="roomlist_price">
+                <span class="roomlist_priceWrapper">
+                  <span>定員2名〜6名様</span>
+                  <strong><span>7,2000円〜</span></strong>
+                  <span>※部屋の写真は一例です。</span>
+                </span>
+                <a href="" class="roomlist_btn">
+                  <button type="button">詳細/ご予約<span>&#187;</span></button>
+                </a>
+              </div>
+            </dd>
+          </dl-->
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <section>
+    <div class="footer">
+      <div class="footer_wrapper">
+        <div class="footer_wrapperInner">
+          <div class="footer_logo"><a href="index.html"><img src="image/logo.png" alt="RIVER TERRACE"></a></div>
+          <div class="footer_nav">
+            <ul class="footer_navWrapper">
+              <li>ROOM</li>
+              <li>FOOD</li>
+              <li>ACTIVITY</li>
+              <li>ACCESS</li>
+              <li>INFORMATION</li>
+              <li>CONTACT</li>
+              <li>RESERVATION</li>
+            </ul>
+          </div>
+           <div class="footer_media">
+             <ul class="footer_mediaWrapper">
+               <li><a href=""><img src="image/twitter.png" alt="Twitter"></a></li>
+               <li><a href=""><img src="image/instagram.png" alt=" Instagram"></a></li>
+               <li><a href=""><img src="image/facebook.png" alt="Facebook"></a></li>
+               <li><a href=""><img src="image/youtube.png" alt="YouTube"></a></li>
+             </ul>
+           </div>
+         </div>
+        <div class="copy_right">
+          <p>©︎RIVER TERRACE.2018</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="page_top"><a href="reservation.html"></a></div>
+</footer>
+    
+  <script>
+    jQuery(function() {
+      var pagetop = $('#page_top');   
+      pagetop.hide();
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {  //100pxスクロールしたら表示
+          pagetop.fadeIn();
+        } else {
+            pagetop.fadeOut();
+          }
+      });
+      pagetop.click(function () {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 500); //0.5秒かけてトップへ移動
+          return false;
+      });
+    });
+  </script>
+  
+  <script>
+    $(function() {
+      // datepicker表示イベント
+      $('#date').pickadate();
+    });
+    jQuery.noConflict();
+    (function( $ ) {
+      $(function() {
+        $('.mySelect').material_select();	
+	       $('#date').pickadate({
+		      weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+		      showMonthsShort: true
+	       });
+	       $(".js-example-basic-multiple").select2();
+      });
+    })(jQuery);
+  </script>
+</body>
+</html>

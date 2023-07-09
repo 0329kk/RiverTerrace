@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>RIVER TERRACE</title>
+<link th:href="@{/css/top.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/style_sp.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/rervation.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/sp_reservation.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/default.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/default.date.css}" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-1.10.0.min.js"></script>
+<script th:src="@{/js/picker.js}"></script>
+<script th:src="@{/js/picker.date.js}"></script>
+<script th:src="@{/js/legacy.js}"></script>
+<script th:src="@{/js/lang-ja.js}"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<main>
+		<div class="contact">
+	          <div class="form">
+	            <form th:action="@{/reservInput/{id}(id=${planDto.id})}" th:method="post" th:object="${formModel}">
+	              <table>
+	                <tbody>
+	                　<tr:block th:if="${not #lists.isEmpty(errorMessages)}">
+	                  	<th></th>
+	                  	<td class="error-message" style="color: red;" th:each="errorMessage : ${errorMessages}" th:text="${errorMessage}"></td>
+	                  </tr:block>	
+	                  <tr>
+	                    <th>お名前<span class="required">必須</span></th>
+	                    <td><input type="text" name="name" placeholder="山田　太郎" th:value="${formModel.name}" th:field="*{name}"></td>
+	                  </tr>
+	                  <tr>
+	                    <th>フリガナ<span class="required">必須</span></th>
+	                    <td><input type="text" name="name" placeholder="ヤマダ　タロウ" th:value="${formModel.furigana}" th:field="*{furigana}"></td>
+	                  </tr>
+	                  <tr>
+	                    <th>電話番号<span class="required">必須</span></th>
+	                    <td><input type="tel" name="tel" placeholder="080-1234-5678" th:value="${formModel.phone_number}" th:field="*{phone_number}"></td>
+	                  </tr>
+	                  <tr>
+	                    <th>メールアドレス<span class="required">必須</span></th>
+	                    <td><input type="email" name="email" placeholder="r.terrace@samle.com" th:value="${formModel.email}" th:field="*{email}"></td>
+	                  </tr>
+	                  <tr>
+	                  	<th>宿泊日<span class="required">必須</span></th>
+	                  	<td><input id="date" class="fieldset__input js__datepicker" type="text" placeholder="日付を選択してください" th:value="${formModel.stayDate}" th:field="*{stayDate}"></td>
+	                  </tr>
+	                  <tr>
+	                  	<th>人数<span class="required">必須</span></th>
+	                  	<td>
+	                  		<select name="numPepole" th:field="*{numPepole}">
+	                  			<option th:each="numPepole : ${numPepoleList}" th:text="${numPepole}"  th:value="${numPepole}" th:selected="${numPepole == formModel.numPepole}"></option>
+	                  		</select>
+	                  	</td>
+	                  </tr>                  
+	                  <tr>
+	                    <th></th>
+	                    <td>
+	                    	<input type="hidden" name="planId" th:value="${planDto.id}">
+	                    	<input type="hidden" name="planName" th:value="${planDto.planname}">
+	                    	<input type="hidden" name="planPrice" th:value="${planDto.price}">
+	                    	<input type="submit" id="submit">
+	                    </td>
+	                  </tr>
+	                </tbody>
+	              </table>
+	            </form>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="returnBtn">
+            <a th:href="@{/top}">トップページに戻る</a>
+         </div>
+      </main>
+      <footer>
+		  <section>
+		    <div class="footer">
+		      <div class="footer_wrapper">
+		        <div class="footer_wrapperInner">
+		          <div class="footer_logo"><a href="index.html"><img th:src="@{'data:image/png;base64,' + ${base64LogoImage}}" alt="RIVER TERRACE"></a></div>
+		          <div class="footer_nav">
+		            <ul class="footer_navWrapper">
+		              <li>ROOM</li>
+		              <li>FOOD</li>
+		              <li>ACTIVITY</li>
+		              <li>ACCESS</li>
+		              <li>INFORMATION</li>
+		              <li>CONTACT</li>
+		              <li>RESERVATION</li>
+		            </ul>
+		          </div>
+		           <div class="footer_media">
+		             <ul class="footer_mediaWrapper">
+		               <li><a href=""><img th:src="@{'data:image/png;base64,' + ${base64TwitterImage}}" alt="Twitter"></a></li>
+		               <li><a href=""><img th:src="@{'data:image/png;base64,' + ${base64InstagramImage}}" alt=" Instagram"></a></li>
+		               <li><a href=""><img th:src="@{'data:image/png;base64,' + ${base64FacebookImage}}" alt="Facebook"></a></li>
+		               <li><a href=""><img th:src="@{'data:image/png;base64,' + ${base64YoutubeImage}}" alt="YouTube"></a></li>
+		             </ul>
+		           </div>
+		         </div>
+		        <div class="copy_right">
+		          <p>©︎RIVER TERRACE.2018</p>
+		        </div>
+		      </div>
+		    </div>
+		  </section>
+		  <div id="page_top"><a th:href="@{/reservation}"></a></div>
+		</footer>
+      <script>
+	    $(function() {
+	      // datepicker表示イベント
+	      $('#date').pickadate();
+	    });
+	    jQuery.noConflict();
+	    (function( $ ) {
+	      $(function() {
+	        $('.mySelect').material_select();	
+		       $('#date').pickadate({
+			      weekdaysShort: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+			      showMonthsShort: true
+		       });
+		       $(".js-example-basic-multiple").select2();
+	      });
+	    })(jQuery);
+  </script>
+</body>
+</html>

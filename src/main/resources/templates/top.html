@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>RIVER TERRACE</title>
+<link th:href="@{/css/top.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/style_sp.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/swiper.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/slick.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/slick-theme.css}" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<header>
+		<div class="header">
+			<div class="header_inner">
+				<div class="header_logo">
+					<a th:href="@{/top}"> <img src="image/logo.png"
+						alt="RIVER TERRACE">
+						<div class="logo_text">
+							RIVER TERRACE<br>リバーテラス<br>一ノ瀬高原
+						</div>
+					</a>
+				</div>
+				<div id="nav-toggle">
+					<span></span> <span></span> <span></span>
+				</div>
+				<nav class="header_nav">
+					<div class="header_navWrapper">
+						<div class="header_nav_logo">
+							<a href="index.html"> <img src="image/logo.png"
+								alt="RIVER TERRACE">
+							</a>
+						</div>
+						<ul class="header_nav_list">
+							<li><a href="">ROOM</a></li>
+							<li><a href="">FOOD</a></li>
+							<li><a href="">ACTIVITY</a></li>
+							<li><a href="">ACCESS</a></li>
+							<li><a href="">CONTACT</a></li>
+							<li><a th:href="@{/reservation}">RESERVATION</a></li>
+						</ul>
+						<ul class="header_sns_list">
+							<li><a href=""><img src="image/twitter.png"
+									alt="Twitter"></a></li>
+							<li><a href=""><img src="image/instagram.png"
+									alt=" Instagram"></a></li>
+							<li><a href=""><img src="image/facebook.png"
+									alt="Facebook"></a></li>
+							<li><a href=""><img src="image/youtube.png"
+									alt="YouTube"></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="slide-img">
+						<img src="image/Photo1.png" alt="RIVER RERRACE">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="slide-img">
+						<img src="image/Photo2.png" alt="RIVER RERRACE">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="slide-img">
+						<img src="image/Photo3.png" alt="RIVER RERRACE">
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="slide-img">
+						<img src="image/Photo4.png" alt="RIVER RERRACE">
+					</div>
+				</div>
+			</div>
+			<h1>自然満喫、心広がる旅</h1>
+		</div>
+		<section>
+			<h2>NEWS</h2>
+			<div class="news_contents">
+				<ul class="newsContents_wrapper">
+					<li><a href="">
+							<figure>
+								<img src="image/news1.png" alt="">
+							</figure>
+							<p>2021.06.01</p>
+							<p>新型コロナウイルスへの対応</p>
+					</a></li>
+					<li><a href=""> <img src="image/nuews2.png" alt="">
+							<p>2021.06.20</p>
+							<p>夏のアクティビティプランのご案内</p>
+					</a></li>
+					<li><a href=""> <img src="image/nwes3.png" alt="">
+							<p>2021.10.20</p>
+							<p>冬場における防寒対策について</p>
+					</a></li>
+				</ul>
+			</div>
+			<aside>
+				<div class="aside_text">
+					<p>
+						四季の彩りに満ちたRIVERテラス。<br>都市の喧騒を離れ、豊かな大地が果てしなく広がる別世界で、<br>自然の実りを五感で味わいつくす。<br>川の流れを感じながら悠々とした時間に癒される。
+					</p>
+					<p>すべてが、初体験になる。</p>
+					<h3>さぁ、感動が待つ別世界へ。</h3>
+				</div>
+				<div class="movie">
+					<video src="image/river terrace.ogv" controls
+						poster="image/river terrace_samune.png"></video>
+				</div>
+				<div class="slider-container">
+					<ul class="slider">
+						<li><img src="image/slider1.png" alt="RIVER TERRACE"></li>
+						<li><img src="image/slider2.png" alt="RIVER TERRACE"></li>
+						<li><img src="image/slider3.png" alt="RIVER TERRACE"></li>
+						<li><img src="image/slider4.png" alt="RIVER TERRACE"></li>
+						<li><img src="image/slider5.png" alt="RIVER TERRACE"></li>
+						<li><img src="image/slider6.png" alt="RIVER TERRACE"></li>
+						<li><img src="image/slider7.png" alt="RIVER TERRACE"></li>
+						<li><img src="image/slider8.png" alt="RIVER TERRACE"></li>
+					</ul>
+				</div>
+			</aside>
+		</section>
+		<section>
+			<div class="five_charm">
+				<h2>GRAMP DOME RIVER TERACE</h2>
+				<h3>5つの魅力</h3>
+				<div class="charm_wrapper">
+					<div class="charm_contents">
+						<div class="charm_photo">
+							<img src="image/charm01.png" alt="RIVER TERRACE">
+						</div>
+						<div class="charm_textRight">
+							<div class="charm_textRightWrapper">
+								<h4>01</h4>
+								<div class="charm_number">
+									<div class="charm_title">
+										<p>悪天候でも安心の</p>
+										<p>
+											<srrong>大型グランピングドームテント</srrong>
+										</p>
+									</div>
+									<div class="charm_titleWrapper">
+										<p>半円形型の大型ドームテントを採用。断熱性の高い2重張り構造の室内は全室冷暖房を完備しており、オールシーズン快適にお過ごしいただけます。</p>
+									</div>
+								</div>
+								<div class="btn_viewMoreRight">
+									<div class="button">
+										<a href="">view more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="charm_contents">
+						<div class="charm_photo">
+							<img src="image/charm02.png" alt="RIVER TERRACE">
+						</div>
+						<div class="charm_textLeft">
+							<div class="charm_textLeftWrapper">
+								<h4>02</h4>
+								<div class="charm_number">
+									<div class="charm_title">
+										<p>北越/新潟の地産地消の旬彩を使用した</p>
+										<p>
+											<srrong>グランピングBBQ</srrong>
+										</p>
+									</div>
+									<div class="charm_titleWrapper">
+										<p>北越・新潟エリアの食材をふんだんに使用したグランピングBBQ。 新潟産の新鮮な魚介類を使用した「RIVER
+											TERRACE」でしか味わえないグランピングBBQを提供いたします。また、食材持込でオリジナルBBQを楽しむ「素泊りプラン」もご用意しております。</p>
+									</div>
+								</div>
+								<div class="btn_viewMoreLeft">
+									<div class="button">
+										<a href="">view more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="charm_contents">
+						<div class="charm_photo">
+							<img src="image/charm03.png" alt="RIVER TERRACE">
+						</div>
+						<div class="charm_textRight">
+							<div class="charm_textRightWrapper">
+								<h4>03</h4>
+								<div class="charm_number">
+									<div class="charm_title">
+										<p>様々な体験でグランピングを満喫</p>
+										<p>
+											<srrong>多種多様なアクティビティ</srrong>
+										</p>
+									</div>
+									<div class="charm_titleWrapper">
+										<p>フロントスペースではどなたでもお楽しみいただける各種体験コンテンツをご用意。ラフティング、カヌー・カヤック、川釣りなどご宿泊のお客様には多種多様なアクティビティでグランピングステイを満喫いただけます。</p>
+									</div>
+								</div>
+								<div class="btn_viewMoreRight">
+									<div class="button">
+										<a href="">view more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="charm_contents">
+						<div class="charm_photo">
+							<img src="image/charm04.png" alt="RIVER TERRACE">
+						</div>
+						<div class="charm_textLeft">
+							<div class="charm_textLeftWrapper">
+								<h4>04</h4>
+								<div class="charm_number">
+									<div class="charm_title">
+										<p>ホテルクオリティの</p>
+										<p>
+											<srrong>充実してアメニティ</srrong>
+										</p>
+									</div>
+									<div class="charm_titleWrapper">
+										<p>アウトドアが苦手なお子様、女性でも安心してご利用頂けるよう充実したアメニティをご用意しております。タオルや歯ブラシなどの基本的なものはもちろんのこと、化粧水や乳液などの女性に嬉しいアメニティも取り揃えております。</p>
+									</div>
+								</div>
+								<div class="btn_viewMoreLeft">
+									<div class="button">
+										<a href="">view more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="charm_contents">
+						<div class="charm_photo">
+							<img src="image/charm05.png" alt="RIVER TERRACE">
+						</div>
+						<div class="charm_textRight">
+							<div class="charm_textRightWrapper">
+								<h4>05</h4>
+								<div class="charm_number">
+									<div class="charm_title">
+										<p>ゆっくりとした時空感を楽しむ</p>
+										<p>
+											<srrong>ファイヤーピット</srrong>
+										</p>
+									</div>
+									<div class="charm_titleWrapper">
+										<p>各お部屋には個別に焚火を楽しんでいただけるプライベートエリアを設置。グランピングならではの用意不要なアウトドア体験を手軽に揺らめく炎と波音は、日常を離れた自然の作り出す「癒し×グランピング」をお届けいたします。</p>
+									</div>
+								</div>
+								<div class="btn_viewMoreRight">
+									<div class="button">
+										<a href="">view more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="service">
+				<div class="service_contents">
+					<div class="service_contentsPhoto">
+						<img src="image/room_Photo.png" alt="RIVER TERRACE">
+					</div>
+					<div class="service_contentsText">
+						<div class="service_contentsTextWrapper">
+							<h2>ROOM</h2>
+							<p>自然との一体感こそ、グランピングの真髄。木々に囲まれた秘密基地のような敷地を思う存分五感で味わえます。非現実的な空間で優雅なひと時をお過ごしください。</p>
+						</div>
+						<div class="btn_viewMoreRight">
+							<div class="button">
+								<a href="">view more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="service_contents">
+					<div class="service_contentsPhoto">
+						<img src="image/activity_photo.png" alt="RIVER TERRACE">
+					</div>
+					<div class="service_contentsText">
+						<div class="service_contentsTextWrapper">
+							<h2>ACTIVITY</h2>
+							<p>旅を、もっと楽しむために。同一価格内で楽しめる、さまざまなアクティビティやサービスをご用意しています。</p>
+						</div>
+						<div class="btn_viewMoreLeft">
+							<div class="button">
+								<a href="">view more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="service_contents">
+					<div class="service_contentsPhoto">
+						<img src="image/food_photo.png" alt="RIVER TERRACE">
+					</div>
+					<div class="service_contentsText">
+						<div class="service_contentsTextWrapper">
+							<h2>FOOD</h2>
+							<p>目で、舌で味わう、彩り豊かな飯綱の食材。地元特産の食材を贅沢に活かした、自慢のコース料理をご賞味ください。</p>
+						</div>
+						<div class="btn_viewMoreRight">
+							<div class="button">
+								<a href="">view more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="information">
+				<div class="information_wrapper">
+					<div class="information_table">
+						<table>
+							<h2>INFORMATION</h2>
+							<tbody>
+								<tr>
+									<th>ADDRESS</th>
+									<td>〒123-456 新潟県南魚沼市舞子0-0-0</td>
+								</tr>
+								<tr>
+									<th>TEL</th>
+									<td>0120-1234-5678</td>
+								</tr>
+								<tr>
+									<th>CAR</th>
+									<td>最寄りIC 関越自動車道 塩沢石打ICから 出口より車で2分</td>
+								</tr>
+								<tr>
+									<th>TRAIN</th>
+									<td>東京駅⇨越後湯沢駅=約70分(最短)<br>新潟駅⇨越後湯沢駅=約45分(最短)<br>越後湯沢駅から無料シャトルバス運行中⇨<a
+										href="">詳細はこちら</a></td>
+								</tr>
+								<tr>
+									<th>CHECK IN<br>CHECK OUT
+									</th>
+									<td>15:00〜18:00<br>7:00〜13:00
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div id="map">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3187.250307819487!2d138.8185943!3d36.979958!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDU4JzQ3LjkiTiAxMzjCsDQ5JzE0LjgiRQ!5e0!3m2!1sja!2sjp!4v1633667858303!5m2!1sja!2sjp"
+							style="border: 0;" allowfullscreen="" loading="lazy"></iframe>
+					</div>
+					<aside>
+						<div class="information_text">
+							<div class="information_textWrapper">
+								<p>ご予約は、お電話または予約サイトからお願いします。</p>
+								<p>📞 0120-1234-5678</p>
+								<div class="btn_reservation">
+									<a th:href="@{/reservation}">RESERVATION</a>
+								</div>
+							</div>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="contact">
+				<div class="contact_wrapper">
+					<h2>CONTACT</h2>
+					<div class="form">
+						<form th:action="@{/inquiryUser}" th:method="post"
+							th:object="${formModel}">
+							<table>
+								<tbody>
+									<tr:block th:if="${not #lists.isEmpty(errorMessages)}">
+										<th></th>
+										<td class="error-message" style="color: red;"
+											th:each="errorMessage : ${errorMessages}"
+											th:text="${errorMessage}"></td>
+									</tr:block>
+									<tr>
+										<th>お名前<span class="required">必須</span></th>
+										<td><input type="text" name="name" placeholder="山田　太郎"
+											th:value="${formModel.name}" th:field="*{name}"></td>
+									</tr>
+									<tr>
+										<th>フリガナ<span class="required">必須</span></th>
+										<td><input type="text" name="name" placeholder="ヤマダ　タロウ"
+											th:value="${formModel.furigana}" th:field="*{furigana}"></td>
+									</tr>
+									<tr>
+										<th>電話番号<span class="required">必須</span></th>
+										<td><input type="tel" name="tel"
+											placeholder="080-1234-5678"
+											th:value="${formModel.phone_number}"
+											th:field="*{phone_number}"></td>
+									</tr>
+									<tr>
+										<th>メールアドレス<span class="required">必須</span></th>
+										<td><input type="email" name="email"
+											placeholder="r.terrace@samle.com"
+											th:value="${formModel.email}" th:field="*{email}"></td>
+									</tr>
+									<tr>
+										<th>お問い合わせ内容<span class="required">必須</span></th>
+										<td><textarea name="text" cols="30" rows="10"
+												placeholder="入力してください" th:value="${formModel.description}"
+												th:field="*{description}"></textarea></td>
+									</tr>
+									<tr>
+										<th></th>
+										<td><input type="submit" id="submit"></td>
+									</tr>
+								</tbody>
+							</table>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<section>
+			<div class="footer">
+				<div class="footer_wrapper">
+					<div class="footer_wrapperInner">
+						<div class="footer_logo">
+							<a href="index.html"><img src="image/logo.png"
+								alt="RIVER TERRACE"></a>
+						</div>
+						<div class="footer_nav">
+							<ul class="footer_navWrapper">
+								<li>ROOM</li>
+								<li>FOOD</li>
+								<li>ACTIVITY</li>
+								<li>ACCESS</li>
+								<li>INFORMATION</li>
+								<li>CONTACT</li>
+								<li>RESERVATION</li>
+							</ul>
+						</div>
+						<div class="footer_media">
+							<ul class="footer_mediaWrapper">
+								<li><a href=""><img src="image/twitter.png"
+										alt="Twitter"></a></li>
+								<li><a href=""><img src="image/instagram.png"
+										alt=" Instagram"></a></li>
+								<li><a href=""><img src="image/facebook.png"
+										alt="Facebook"></a></li>
+								<li><a href=""><img src="image/youtube.png"
+										alt="YouTube"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="copy_right">
+						<p>©︎RIVER TERRACE.2018</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div id="page_top">
+			<a href="index.html"></a>
+		</div>
+	</footer>
+
+	<script>
+		$(document).ready(function() {
+			// バリデーションエラーがある場合、エラー箇所にスクロールする
+			if ($('.error-message').length > 0) {
+				$('html, body').animate({
+					scrollTop : $('.error-message').first().offset().top
+				}, 500);
+			}
+		});
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			$("#nav-toggle").click(function() {
+				$('body').toggleClass("open");
+				$('body').next().toggleClass("onanimation");
+				$('ul li').hide();
+				$('ul li').each(function(i) {
+					$(this).delay(80 * i).fadeIn(500);
+				});
+			});
+		});
+	</script>
+
+	<script>
+		jQuery(function() {
+			$(window)
+					.scroll(
+							function() {
+								if ($(window).scrollTop() > 20) {
+									$(
+											'.header_inner,.logo_text,.header_nav_list li a,#nav-toggle span')
+											.addClass('fixed');
+								} else {
+									$(
+											'.header_inner,.logo_text,.header_nav_list li a,#nav-toggle span')
+											.removeClass('fixed');
+								}
+							});
+		});
+	</script>
+
+	<script>
+		jQuery(function() {
+			var pagetop = $('#page_top');
+			pagetop.hide();
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 300) {
+					pagetop.fadeIn();
+				} else {
+					pagetop.fadeOut();
+				}
+			});
+			pagetop.click(function() {
+				$('body,html').animate({
+					scrollTop : 0
+				}, 500);
+				return false;
+			});
+		});
+	</script>
+
+	<script th:src="@{js/swiper.min.js}"></script>
+	<script>
+		let swipeOption = {
+			loop : true,
+			effect : 'fade',
+			autoplay : {
+				delay : 4000,
+				disableOnInteraction : false,
+			},
+			speed : 2000,
+		}
+		new Swiper('.swiper-container', swipeOption);
+	</script>
+
+	<script th:src="@{js/slick.min.js}"></script>
+	<script>
+		$(function() {
+			$('.slider').slick({
+				autoplay : true, //自動でスクロール
+				autoplaySpeed : 0, //自動再生のスライド切り替えまでの時間を設定
+				speed : 5000, //スライドが流れる速度を設定
+				cssEase : "linear", //スライドの流れ方を等速に設定
+				slidesToShow : 4, //表示するスライドの数
+				swipe : false, // 操作による切り替えはさせない
+				arrows : false, //矢印非表示
+				pauseOnFocus : false, //スライダーをフォーカスした時にスライドを停止させるか
+				pauseOnHover : false, //スライダーにマウスホバーした時にスライドを停止させるか
+				responsive : [ {
+					breakpoint : 750,
+					settings : {
+						slidesToShow : 3, //画面幅750px以下でスライド3枚表示
+					}
+				} ]
+			});
+		});
+	</script>
+
+	<script>
+		$(window).on('scroll', function() {
+			var elem = $('.charm_textLeft,.charm_textRight');
+			var isAnimate = 'isAnimate';
+
+			elem.each(function() {
+				var elemOffset = $(this).offset().top;
+				var scrollPos = $(window).scrollTop();
+				var wh = $(window).height();
+
+				if (scrollPos > elemOffset - wh + (wh / 2)) {
+					$(this).addClass(isAnimate);
+				} else {
+					$(this).removeClass(isAnimate);
+				}
+			});
+		});
+	</script>
+
+
+</body>
+</html>
